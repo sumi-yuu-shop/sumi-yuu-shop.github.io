@@ -1,12 +1,44 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>墨遊 SUMIYUU</title>
-</head>
-<body>
-<h1>墨遊 SUMIYUU</h1>
-<p>準備中です。</p>
-</body>
-</html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>牢屋の美人 | 墨遊 SUMIYUU</title>
+<style>
+body{margin:0;background:#15131a;color:#eee;font-family:sans-serif;line-height:1.7}
+main{max-width:480px;margin:0 auto;padding:16px}
+h1{font-size:18px;text-align:center;color:#e8b4c0}
+img{width:100%;border-radius:8px}
+#log{min-height:140px;background:#221f2a;border-radius:8px;padding:12px;margin:12px 0}
+#log p{margin:0 0 10px}
+.me{color:#9ab;text-align:right}
+button,a.b{display:block;width:100%;box-sizing:border-box;margin:8px 0;padding:12px;border:0;border-radius:8px;background:#c96b82;color:#fff;font-size:16px;text-align:center;text-decoration:none}
+a.b{background:#3a3545}
+</style></head><body><main>
+<h1>牢屋の美人</h1>
+<img src="rouya.png" alt="" onerror="this.style.display='none'">
+<div id="log"><p>…なによ、また来たの。暇な人ね。</p></div>
+<button id="btn"></button>
+<hr>
+<p>墨遊 SUMIYUU<br>浮世絵美人のデジタル商品のお店</p>
+<a class="b" href="https://store.line.me/stickershop/product/37563954/ja">LINEスタンプ</a>
+<a class="b" href="https://booth.pm/">BOOTH</a>
+<a class="b" href="https://suzuri.jp/">SUZURI</a>
+<script>
+const s=[
+{q:"ここで何してるの？",a:["見りゃわかるでしょ。休暇よ、鉄格子つきのね。","…あんた、ここが温泉に見える？"]},
+{q:"なんで捕まったの？",a:["…さあね。濡れ衣よ。たぶん。","聞く？それ聞くの？言うほどのことじゃないわ。"]},
+{q:"本当は何したの？",a:["…実は、自分でもよく覚えてないのよ。","あの夜はちょっと、飲みすぎてたのよ。"]},
+{q:"思い出して",a:["確か、偉い人の屋敷の近くを歩いてて…","月がきれいでね。で、急に…出したくなったの。"]},
+{q:"それで？",a:["…屋敷の裏で、立ったまま放尿したの。泥酔して。偉い人の家の裏で。…笑うな！","白状するわよ。屋敷の裏で用を足したの。酔ってたの！笑わないで！"]}
+];
+let i=0;
+const log=document.getElementById("log"),btn=document.getElementById("btn");
+btn.textContent=s[0].q;
+btn.onclick=()=>{
+ if(i>=s.length){i=0;log.innerHTML="<p>…なによ、また来たの。暇な人ね。</p>";btn.textContent=s[0].q;return;}
+ const st=s[i];
+ log.innerHTML+='<p class="me">'+st.q+'</p><p>'+st.a[Math.floor(Math.random()*st.a.length)]+'</p>';
+ i++;
+ btn.textContent=i<s.length?s[i].q:"もう一度";
+};
+</script>
+</main></body></html>
